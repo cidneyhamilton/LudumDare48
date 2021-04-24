@@ -50,6 +50,7 @@ namespace Cyborg.Clinic {
 	    if (LastTapped == tapper) {
 		Debug.LogWarning("This tapper was tapped twice; rhythm is off!");
 		mistakes++;
+		EndEarly();
 	    }
 	    LastTapped = tapper;
 	    numTaps++;
@@ -69,6 +70,12 @@ namespace Cyborg.Clinic {
 	    timeRemaining = SEQUENCE_DURATION;
 	}
 
+	void EndEarly() {
+	    timeRemaining = 0;
+	    timerIsRunning = false;
+	    EndSequence();
+	}
+	
 	void EndSequence() {
 	    GetComponent<Canvas>().enabled = false;
 	    Debug.Log("Sequence over.");	    
