@@ -17,6 +17,8 @@ namespace Cyborg.Clinic {
 
     public class Tappers : MonoBehaviour
     {
+
+	public TapperMusic TapperMusic;
 	
 	void OnEnable() {
 	    TapperEvents.OnStart += StartSequence;
@@ -67,8 +69,7 @@ namespace Cyborg.Clinic {
 	    Reset();
 	    GetComponent<Canvas>().enabled = true;
 	    AudioEvents.FadeOutMusic();
-	    // TODO: Fade this in gradually?
-	    GetComponentInChildren<AudioSource>().Play();
+	    TapperMusic.FadeInMusic();
 	    // Start a countdown timer to end the sequence
 	    timerIsRunning = true;
 	    timeRemaining = SEQUENCE_DURATION;
@@ -83,7 +84,7 @@ namespace Cyborg.Clinic {
 	void EndSequence() {
 	    GetComponent<Canvas>().enabled = false;
 	    AudioEvents.FadeInMusic();
-	    GetComponentInChildren<AudioSource>().Stop();
+	    TapperMusic.FadeOutMusic();
 	    Debug.Log("Sequence over.");	    
 
 	    if (IsSuccess()) {
@@ -113,6 +114,7 @@ namespace Cyborg.Clinic {
 		}
 	    }
 	}
+
     }
 
 }
