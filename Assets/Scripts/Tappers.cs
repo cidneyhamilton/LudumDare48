@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cyborg.Dialogue;
 
 namespace Cyborg.Clinic {
 
@@ -63,8 +64,19 @@ namespace Cyborg.Clinic {
 
 	void EndSequence() {
 	    GetComponent<Canvas>().enabled = false;
-	    Debug.Log("Sequence over.");
+	    Debug.Log("Sequence over.");	    
+
+	    if (IsSuccess()) {
+		StoryEvents.ChoosePath("success");
+	    } else {
+		StoryEvents.ChoosePath("failure");
+	    }
 	}
+
+	// TODO: Scale the difficulty here
+	bool IsSuccess() {
+	    return numTaps > 10 && mistakes == 0;
+	}	
 
 	void Start() {
 	    GetComponent<Canvas>().enabled = false;
