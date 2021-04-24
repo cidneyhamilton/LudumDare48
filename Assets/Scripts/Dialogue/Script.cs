@@ -65,8 +65,8 @@ namespace GameController {
 		Debug.Log("Checking for end of game.");
 		// check for game over
 		bool isGameOver = _inkStory.variablesState["IsGameOver"].ToString() == "true";
-		if (isGameOver) {					   
-		    SceneEvents.ChangeScene("Title");
+		if (isGameOver) {
+		    SceneEvents.ChangeScene("_Title");
 		}
 	    }
 	}

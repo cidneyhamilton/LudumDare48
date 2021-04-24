@@ -9,6 +9,7 @@ namespace Cyborg.Clinic {
     public class StartButton : MonoBehaviour {
 	
 	public void StartGame() {
+	    StoryEvents.Hide();
 	    StoryEvents.Restart();
 	    SceneEvents.ChangeScene("Main");
 	}

@@ -1,4 +1,5 @@
 VAR FlashbackCounter = 0
+VAR IsGameOver = false
 
 -> start
 
