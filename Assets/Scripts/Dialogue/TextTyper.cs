@@ -59,7 +59,7 @@ namespace Cyborg.Dialogue {
             if (typing) {
                 // Already typing; do nothing!
             } else {
-	      InvokeRepeating("Type", startDelay, 0.08f);
+	      InvokeRepeating("Type", startDelay, 0.04f);
             }
         }
 				
