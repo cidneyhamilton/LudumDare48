@@ -66,7 +66,9 @@ namespace Cyborg.Clinic {
 	    Debug.Log("starting tapper sequence.");
 	    Reset();
 	    GetComponent<Canvas>().enabled = true;
-
+	    AudioEvents.FadeOutMusic();
+	    // TODO: Fade this in gradually?
+	    GetComponentInChildren<AudioSource>().Play();
 	    // Start a countdown timer to end the sequence
 	    timerIsRunning = true;
 	    timeRemaining = SEQUENCE_DURATION;
@@ -80,6 +82,8 @@ namespace Cyborg.Clinic {
 	
 	void EndSequence() {
 	    GetComponent<Canvas>().enabled = false;
+	    AudioEvents.FadeInMusic();
+	    GetComponentInChildren<AudioSource>().Stop();
 	    Debug.Log("Sequence over.");	    
 
 	    if (IsSuccess()) {

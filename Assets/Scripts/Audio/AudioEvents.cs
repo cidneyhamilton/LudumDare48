@@ -16,6 +16,8 @@ namespace Cyborg.Audio {
 	// Pause or unpause the background music
 	public static event Action OnPause;
 	public static event Action OnUnPause;
+	public static event Action OnFadeOutMusic;
+	public static event Action OnFadeInMusic;
 	
 	// Handles playing a sound
 	public static void PlaySound(string clipName) {
@@ -30,7 +32,19 @@ namespace Cyborg.Audio {
 		OnPlayMusic(clipName);
 	    }
 	}
-	
+
+	public static void FadeOutMusic() {
+	    if (OnFadeOutMusic != null) {
+		OnFadeOutMusic();
+	    }
+	}
+
+	public static void FadeInMusic() {
+	    if (OnFadeInMusic != null) {
+		OnFadeInMusic();
+	    }
+	}
+
 	// Handles pausing and unpausing
 	
 	public static void Pause() {

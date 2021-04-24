@@ -347,6 +347,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1000970021161758776, guid: 124b324614b6858fd86d3685b324cffc,
+        type: 3}
+      propertyPath: clips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000970021161758776, guid: 124b324614b6858fd86d3685b324cffc,
+        type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 029831ab02cd8e431822f61040468801, type: 3}
+    - target: {fileID: 1000970021161758777, guid: 124b324614b6858fd86d3685b324cffc,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 9bed33fc93df51c228bcfa39e8cfbc38,
+        type: 2}
     - target: {fileID: 1000970021161758779, guid: 124b324614b6858fd86d3685b324cffc,
         type: 3}
       propertyPath: m_Name
@@ -565,6 +581,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8397890045776590608, guid: 81f256ee44c8d72e5abbcc0e067e833f,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 0b657966100da7e5d98afdc186ba2d4d,
+        type: 2}
     - target: {fileID: 8397890045776590609, guid: 81f256ee44c8d72e5abbcc0e067e833f,
         type: 3}
       propertyPath: m_RootOrder

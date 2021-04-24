@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Cyborg.Audio;
 
 namespace Cyborg.Clinic {
     

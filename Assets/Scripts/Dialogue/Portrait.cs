@@ -18,13 +18,13 @@ namespace Cyborg.Dialogue {
 	}
 
 	void Show(string speaker, string line, List<string> tags) {
-	    Debug.Log("Speaker is " + speaker);
-	    Debug.Log("GameObject is " + gameObject.name);
+	    // Debug.Log("Speaker is " + speaker);
+	    // Debug.Log("GameObject is " + gameObject.name);
 	    if (speaker == gameObject.name) {
-		Debug.Log("Showing portrait of " + speaker);
+		// Debug.Log("Showing portrait of " + speaker);
 		Show();
 	    } else {
-		Debug.Log("Hiding portrait of " + gameObject.name);
+		// Debug.Log("Hiding portrait of " + gameObject.name);
 		Hide();
 	    }
 	}

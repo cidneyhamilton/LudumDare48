@@ -52,7 +52,7 @@ namespace Cyborg.Dialogue {
 	}
 
 	void Speak(string speaker, string line, List<string> tags) {
-	    Debug.Log("Speaking line " + line + ",  setting canContinue.");
+	    // Debug.Log("Speaking line " + line + ",  setting canContinue.");
 	    canContinue = true;
 	    timer = 0;
 
