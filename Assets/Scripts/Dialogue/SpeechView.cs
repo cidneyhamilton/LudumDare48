@@ -46,10 +46,11 @@ namespace Cyborg.Dialogue {
 
         // Show a spoken line of dialogue
         public void Show(string speaker, string line, List<string> tags) {
-            if (typer == null) {
-                speechText.text = line;    
+	    string modified = line.Replace("/ ", "\n");
+	    if (typer == null) {		
+                speechText.text = modified;    
             } else {
-                typer.UpdateText(line); 
+                typer.UpdateText(modified); 
             }    
 
 	    // Debug.Log("Showing line of dialogue " + line);

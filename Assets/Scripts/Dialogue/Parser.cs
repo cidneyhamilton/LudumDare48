@@ -22,7 +22,7 @@ namespace Cyborg.Dialogue {
 		Debug.LogError("No speaker found.");
 		return line;
 	    } else {
-		return line.Substring(index + 1);
+		return line.Substring(index + 2);
 	    }
 	}
     }
