@@ -45,7 +45,7 @@ namespace Cyborg.Dialogue {
         }		
 
         // Show a spoken line of dialogue
-        public void Show(string line, List<string> tags) {
+        public void Show(string speaker, string line, List<string> tags) {
             if (typer == null) {
                 speechText.text = line;    
             } else {

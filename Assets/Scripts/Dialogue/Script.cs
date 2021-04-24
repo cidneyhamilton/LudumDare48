@@ -80,7 +80,9 @@ namespace GameController {
 	    string result = _inkStory.Continue().Trim();
 	    // Debug.Log("Next line:" + result);
 	    if (result != "") {
-		StoryEvents.Speak(result, _inkStory.currentTags);
+		string speaker = Parser.Speaker(result);
+		string speech = Parser.Speech(result);
+		StoryEvents.Speak(speaker, speech, _inkStory.currentTags);
 	    } else if (_inkStory.currentTags.Contains("emdr")) {
 		Debug.Log("Tags contain EMDR; starting tapper sequence.");
 		TapperEvents.StartSequence();

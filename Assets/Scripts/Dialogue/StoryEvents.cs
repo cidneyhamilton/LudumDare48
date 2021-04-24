@@ -5,7 +5,7 @@ namespace Cyborg.Dialogue {
 
     public static class StoryEvents 
     {
-	public delegate void OnSpeakEvent(string line, List<string> tags);
+	public delegate void OnSpeakEvent(string speaker, string speech, List<string> tags);
 	public static event OnSpeakEvent OnSpeak;
 
 	public delegate void OnPathEvent(string knotName);
@@ -16,10 +16,10 @@ namespace Cyborg.Dialogue {
 	public static event Action OnHide;
 
 	// Show the Player Character's speech bubble
-	public static void Speak(string line, List<string> tags) {
+	public static void Speak(string speaker, string speech, List<string> tags) {
 	    // UnityEngine.Debug.Log("Speaking line " + line);
 	    if (OnSpeak != null) {
-		OnSpeak(line, tags);
+		OnSpeak(speaker, speech, tags);
 	    }
 	}
 	// Show the Player Character's speech bubble

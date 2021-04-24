@@ -9,16 +9,28 @@ namespace Cyborg.Dialogue {
 
 	void OnEnable() {
 	    StoryEvents.OnSpeak += Show;
-	    StoryEvents.OnContinue += Hide;
+	    StoryEvents.OnHide += Hide;
 	}
 
 	void OnDisable() {
 	    StoryEvents.OnSpeak -= Show;
-	    StoryEvents.OnContinue -= Hide;
+	    StoryEvents.OnHide -= Hide;
 	}
 
-	void Show(string line, List<string> tags) {
-	    Show();
+	void Show(string speaker, string line, List<string> tags) {
+	    Debug.Log("Speaker is " + speaker);
+	    Debug.Log("GameObject is " + gameObject.name);
+	    if (speaker == gameObject.name) {
+		Debug.Log("Showing portrait of " + speaker);
+		Show();
+	    } else {
+		Debug.Log("Hiding portrait of " + gameObject.name);
+		Hide();
+	    }
+	}
+
+	void Start() {
+	    Hide();
 	}
 	
 	
