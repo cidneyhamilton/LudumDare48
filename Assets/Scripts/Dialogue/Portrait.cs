@@ -17,7 +17,7 @@ namespace Cyborg.Dialogue {
 	    StoryEvents.OnContinue -= Hide;
 	}
 
-	void Show(string line) {
+	void Show(string line, List<string> tags) {
 	    Show();
 	}
 	

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace Cyborg.Dialogue {
 
@@ -44,7 +45,7 @@ namespace Cyborg.Dialogue {
         }		
 
         // Show a spoken line of dialogue
-        public void Show(string line) {
+        public void Show(string line, List<string> tags) {
             if (typer == null) {
                 speechText.text = line;    
             } else {

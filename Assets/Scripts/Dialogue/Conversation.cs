@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Cyborg.Clinic;
 using UnityEngine;
 
 namespace Cyborg.Dialogue {
@@ -50,10 +51,15 @@ namespace Cyborg.Dialogue {
 	    } 
 	}
 
-	void Speak(string line) {
-	    Debug.Log("Speaking line; setting canContinue.");
+	void Speak(string line, List<string> tags) {
+	    // Debug.Log("Speaking line; setting canContinue.");
 	    canContinue = true;
 	    timer = 0;
+
+	    // TODO: Add more variables?
+	    if (tags.Contains("emdr")) {
+		TapperEvents.StartSequence();
+	    }
 	}	
 
     }

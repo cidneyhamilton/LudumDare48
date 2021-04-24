@@ -75,7 +75,7 @@ namespace GameController {
 	    string result = _inkStory.Continue().Trim();
 	    Debug.Log("Next line:" + result);
 	    if (result != "") {
-		StoryEvents.Speak(result);
+		StoryEvents.Speak(result, _inkStory.currentTags);
 	    }
 	}
 	

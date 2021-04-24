@@ -1,22 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Cyborg.Dialogue {
 
     public static class StoryEvents 
     {
-	public delegate void onSpeakEvent(string line);
-	public static event onSpeakEvent OnSpeak;
-	public static event onSpeakEvent OnChoosePath;
+	public delegate void OnSpeakEvent(string line, List<string> tags);
+	public static event OnSpeakEvent OnSpeak;
+
+	public delegate void OnPathEvent(string knotName);
+	public static event OnPathEvent OnChoosePath;
 	
 	public static event Action OnRestart;
 	public static event Action OnContinue;
 	public static event Action OnHide;
 
 	// Show the Player Character's speech bubble
-	public static void Speak(string line) {
+	public static void Speak(string line, List<string> tags) {
 	    // UnityEngine.Debug.Log("Speaking line " + line);
 	    if (OnSpeak != null) {
-		OnSpeak(line);
+		OnSpeak(line, tags);
 	    }
 	}
 	// Show the Player Character's speech bubble
