@@ -7,12 +7,28 @@ using Cyborg.Scenes;
 namespace Cyborg.Clinic {
     
     public class StartButton : MonoBehaviour {
+
+	bool isStarting;
+
+	public void Start() {
+	    isStarting = false;
+	}
 	
 	public void StartGame() {
-	    AudioEvents.PlaySound("click");
-	    StoryEvents.Hide();
-	    StoryEvents.Restart();
-	    SceneEvents.ChangeScene("Main");
+	    if (!isStarting) {
+		isStarting = true;
+		AudioEvents.PlaySound("click");
+		StoryEvents.Hide();
+		StoryEvents.Restart();
+		SceneEvents.ChangeScene("Main");
+	    }
 	}
+
+	void Update() {
+	    if (Input.GetKeyUp("space") || Input.GetKeyUp("enter")) {
+		StartGame();
+	    }
+	}
+     
     }
 }
