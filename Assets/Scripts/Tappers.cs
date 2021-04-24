@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using Cyborg.Audio;
 using Cyborg.Dialogue;
+
 
 namespace Cyborg.Clinic {
 
@@ -34,10 +37,12 @@ namespace Cyborg.Clinic {
 	public int mistakes = 0;
 	
 	public void LeftTapper() {
+	    AudioEvents.PlaySound("tap1");
 	    Tap(Tapper.Left);
 	}
 
 	public void RightTapper() {
+	    AudioEvents.PlaySound("tap2");
 	    Tap(Tapper.Right);
 	}
 
