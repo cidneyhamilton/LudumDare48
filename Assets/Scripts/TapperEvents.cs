@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Cyborg.Clinic {
     
@@ -9,6 +10,7 @@ namespace Cyborg.Clinic {
 	public static event Action OnEnd;
 
 	public static void StartSequence() {
+	    Debug.Log("Starting tapper sequence.");
 	    if (OnStart != null) {
 		OnStart();
 	    }

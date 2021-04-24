@@ -63,9 +63,11 @@ namespace Cyborg.Clinic {
 	}
 
 	void StartSequence() {
+	    Debug.Log("starting tapper sequence.");
 	    Reset();
 	    GetComponent<Canvas>().enabled = true;
-	    // TODO: Start a countdown timer to end the sequence
+
+	    // Start a countdown timer to end the sequence
 	    timerIsRunning = true;
 	    timeRemaining = SEQUENCE_DURATION;
 	}

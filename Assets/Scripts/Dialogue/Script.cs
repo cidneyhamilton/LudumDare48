@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 
+using Cyborg.Clinic;
 using Cyborg.Dialogue;
 using Cyborg.Scenes;
 
@@ -57,17 +58,21 @@ namespace GameController {
 	    _inkStory.ResetState();
 	}
 
-	void Continue() {	    	   
-	    if (canContinue) {
+	bool IsGameOver() {
+	    // Debug.Log("Variable State: IsGameOver: " + _inkStory.variablesState["IsGameOver"].ToString());
+	    return (int) _inkStory.variablesState["IsGameOver"] == 1;
+	}
+	
+	void Continue() {		    
+	    // Debug.Log("Checking for game over.");
+	    if (IsGameOver()) {
+		// Debug.Log("Game Over.");
+		SceneEvents.ChangeScene("_Title");
+	    } else  if (canContinue) {
 		NextLine();
 	    } else {
 		StoryEvents.Hide();
-		// Debug.Log("Checking for end of game.");
-		// check for game over
-		bool isGameOver = _inkStory.variablesState["IsGameOver"].ToString() == "true";
-		if (isGameOver) {
-		    SceneEvents.ChangeScene("_Title");
-		}
+	
 	    }
 	}
 
@@ -76,6 +81,9 @@ namespace GameController {
 	    // Debug.Log("Next line:" + result);
 	    if (result != "") {
 		StoryEvents.Speak(result, _inkStory.currentTags);
+	    } else if (_inkStory.currentTags.Contains("emdr")) {
+		Debug.Log("Tags contain EMDR; starting tapper sequence.");
+		TapperEvents.StartSequence();
 	    }
 	}
 	
