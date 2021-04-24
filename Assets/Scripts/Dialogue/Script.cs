@@ -85,6 +85,7 @@ namespace GameController {
 		StoryEvents.Speak(speaker, speech, _inkStory.currentTags);
 	    } else if (_inkStory.currentTags.Contains("emdr")) {
 		Debug.Log("Tags contain EMDR; starting tapper sequence.");
+		StoryEvents.Hide();
 		TapperEvents.StartSequence();
 	    }
 	}

@@ -17,7 +17,7 @@ namespace Cyborg.Clinic {
 	}
 
 	void Update() {
-	    if (Input.GetKeyUp("space") || Input.GetKeyUp("enter")) {
+	    if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.KeypadEnter)) {
 		StartGame();
 	    }
 	}

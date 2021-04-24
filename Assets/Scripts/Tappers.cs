@@ -113,6 +113,14 @@ namespace Cyborg.Clinic {
 		    EndSequence();
 		}
 	    }
+
+	    if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.RightControl)) {
+		LeftTapper();
+	    }
+	    if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftControl)) {
+		RightTapper();
+	    }
+	    
 	}
 
     }
