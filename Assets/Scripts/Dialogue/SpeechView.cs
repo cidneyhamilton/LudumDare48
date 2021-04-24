@@ -52,7 +52,7 @@ namespace Cyborg.Dialogue {
                 typer.UpdateText(line); 
             }    
 
-	    Debug.Log("Showing line of dialogue " + line);
+	    // Debug.Log("Showing line of dialogue " + line);
             Show();
         }
 

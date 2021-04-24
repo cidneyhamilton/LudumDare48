@@ -29,12 +29,12 @@ namespace Cyborg.Dialogue {
 	public void Continue() {
 	    if (timer < INPUT_DEBOUNCE) {
 		// Don't advance
-		Debug.Log("Don't advance.");
+		// Debug.Log("Don't advance.");
 	    } else if (IsTyping()) {
-		Debug.Log("Finish typing.");
+		// Debug.Log("Finish typing.");
 		FinishTyping();
 	    } else if (canContinue) {
-		Debug.Log("Continue story.");
+		// Debug.Log("Continue story.");
 		timer = 0;
 		StoryEvents.Continue();
 	    }

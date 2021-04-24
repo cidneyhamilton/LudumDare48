@@ -37,7 +37,7 @@ namespace Cyborg.Dialogue {
 	}
 
         public void UpdateText(string newText) {
-            Debug.Log(string.Format("Updating text to {0}", newText));
+            // Debug.Log(string.Format("Updating text to {0}", newText));
 	    StopTyping();
 	    textComponent.text = "";
 	    textToType = newText;

@@ -62,7 +62,7 @@ namespace GameController {
 		NextLine();
 	    } else {
 		StoryEvents.Hide();
-		Debug.Log("Checking for end of game.");
+		// Debug.Log("Checking for end of game.");
 		// check for game over
 		bool isGameOver = _inkStory.variablesState["IsGameOver"].ToString() == "true";
 		if (isGameOver) {
@@ -73,7 +73,7 @@ namespace GameController {
 
 	void NextLine() {
 	    string result = _inkStory.Continue().Trim();
-	    Debug.Log("Next line:" + result);
+	    // Debug.Log("Next line:" + result);
 	    if (result != "") {
 		StoryEvents.Speak(result, _inkStory.currentTags);
 	    }

@@ -28,6 +28,7 @@ namespace Cyborg.Clinic {
 	private Tapper LastTapped = Tapper.None;
 	private float timeRemaining = 10;
 	private bool timerIsRunning = false;
+	const float SEQUENCE_DURATION = 10;
 	
 	public int numTaps = 0;
 	public int mistakes = 0;
@@ -60,6 +61,7 @@ namespace Cyborg.Clinic {
 	    GetComponent<Canvas>().enabled = true;
 	    // TODO: Start a countdown timer to end the sequence
 	    timerIsRunning = true;
+	    timeRemaining = SEQUENCE_DURATION;
 	}
 
 	void EndSequence() {
@@ -75,7 +77,7 @@ namespace Cyborg.Clinic {
 
 	// TODO: Scale the difficulty here
 	bool IsSuccess() {
-	    return numTaps > 10 && mistakes == 0;
+	    return numTaps > SEQUENCE_DURATION && mistakes == 0;
 	}	
 
 	void Start() {

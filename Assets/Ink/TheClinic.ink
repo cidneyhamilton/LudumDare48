@@ -16,6 +16,8 @@ The rest of the game will go here when it's ready.
 -> END
 
 === failure ===
-Sorry, let's try that again. #emdr
+You don't quite have the hang of it, sorry.
+Let's try that again. Remember to hit the tappers in alternating succession to get through the flashback.
+Let's give it one more go. #emdr
 -> DONE
 
