@@ -16,7 +16,7 @@ Eliza: Then merely think of them. I dare not pry.
 Regan: But thou canst help me?
 Eliza: Yea, sir. Tap left then right then left again. / While visting the trauma of thy past.
 Regan: I'll play thy game, doctor. When do I start?
-Eliza: Now. Think of a memory of the past. / If you succeed, we'll try the next flashback.
+Eliza: Now. Think of a memory of the past. / If thou succeedst, we'll try the next flashback.
 #emdr
 ->DONE
 
@@ -44,26 +44,26 @@ Eliza: My lord, remember what I bid thee do / Tap left, then right, as quickly a
 Eliza: Well done, my lord. Thou hast accessed a glimpse, / Of what thy mind will do whence processed this.
 Regan: I saw a woman's face--
 Eliza: That's thy late wife. / Thy greatest partner in thy enterprise.
-Eliza: She led your rise from partner to exec. / When cowardice unmanned thee she was there.
+Eliza: She led thy rise from partner to exec. / When cowardice unmanned thee she was there.
 Regan: She should have died hereafter.
 Eliza: Thou thinkst thou can anticipate hereafter?
 Regan: Aye; three witches did for me last winter.
 Eliza: Perhaps that should be our next memory?
 Regan: Perhaps.
-Eliza: Prepare your tappers; we'll begin again.
+Eliza: Prepare thy tappers; we'll begin again.
 # emdr
 -> DONE
 
 == after_second_flashback
 Regan: I start to see why it was wise of me. / To block these wisps of mem'ry from my mind.
-Eliza: Shall we move on? You would be wise to end / This quest for self-discovery you've embarked.
+Eliza: Shall we move on? Thou wouldst be wise to end / This quest for self-discovery thou hast embarked.
 Regan: Begin again, good doctor. Make it quick.
 # emdr
 -> DONE
 
 == after_third_flashback
-Regan: My friend. Thy ghost will haunt me to the grave. / What could have possessed me to hurt you so?
-Eliza: Do you really want to know?
+Regan: My friend. Thy ghost will haunt me to the grave. / What could have possessed me to hurt thee so?
+Eliza: Dost thou really want to know the answer? / Deeper still must we dive into the matter.
 # emdr
 -> DONE
 
@@ -71,16 +71,16 @@ Eliza: Do you really want to know?
 Regan: The witches were the first to see the truth. / They galled me into murder and I flew.
 Regan: Once this might have seemed the right thing to do, / But now I have an empire in uproar.
 Regan: I doubt I will survive beyond the year.
-Eliza: Just like the man you killed so you'd be here?
+Eliza: Just like the man thou killed to cometh here?
 Regan: I don't remember.
-Eliza: Soon, my lord, you will.
+Eliza: Soon, my lord, we will.
 # emdr
 -> DONE
 
 == after_fifth_flashback
 Regan: What is this? Does thou seek to drive me mad?
-Eliza: Nay, my lord, your downfall would lack sweetness. / If you forgot what led you to this place.
-Eliza: Now come and lead your army to its ruin. / Led by a man not yet of woman born.
+Eliza: Nay, my lord, thy downfall would lack sweetness. / Should thouh forget what ledst thee to this place.
+Eliza: Now come and lead thine army to its ruin. / Led by a man not yet of woman born.
 ~ IsGameOver = true
 Eliza: Now, at least, our chase can be brought to end.
 -> END
