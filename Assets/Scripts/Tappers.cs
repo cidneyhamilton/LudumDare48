@@ -35,7 +35,7 @@ namespace Cyborg.Clinic {
 	private Tapper LastTapped = Tapper.None;
 	private float timeRemaining = 10;
 	private bool timerIsRunning = false;
-	const float START_DURATION = 5;
+	const float START_DURATION = 8;
 	private float duration;
 	
 	public int numTaps = 0;
@@ -97,7 +97,7 @@ namespace Cyborg.Clinic {
 	    Debug.Log("Sequence over.");	    
 
 	    if (IsSuccess()) {
-		duration += 3;
+		duration += 2;
 		AudioEvents.PlaySound("HappySting");
 		AudioEvents.PlayMusic("Main");	    
 		AudioEvents.FadeInMusic();
