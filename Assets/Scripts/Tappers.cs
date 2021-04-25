@@ -60,6 +60,8 @@ namespace Cyborg.Clinic {
 		Debug.LogWarning("This tapper was tapped twice; rhythm is off!");
 		mistakes++;
 		EndEarly();
+	    } else {
+		StoryEvents.ShowHallucination();
 	    }
 	    LastTapped = tapper;
 	    numTaps++;
