@@ -29,10 +29,6 @@ Eliza: Now. Think of a memory of the past. / If thou succeedst, we'll try the ne
 	  -> after_second_flashback
 	- FlashbackCounter == 3:
 	  -> after_third_flashback
-	- FlashbackCounter == 4:
-	  -> after_fourth_flashback
-	- FlashbackCounter == 5:
-	  -> after_fifth_flashback
 }
 
 === failure ===
@@ -55,29 +51,16 @@ Eliza: Prepare thy tappers; we'll begin again.
 -> DONE
 
 == after_second_flashback
+Regan: The witches were the first to see the truth. / They galled me into murder and I flew.
+Regan: Once this might have seemed the right thing to do, / But now I have an empire in uproar.
 Regan: I start to see why it was wise of me. / To block these wisps of mem'ry from my mind.
 Eliza: Shall we move on? Thou wouldst be wise to end / This quest for self-discovery thou hast embarked.
 Regan: Begin again, good doctor. Make it quick.
-# emdr
--> DONE
-
-== after_third_flashback
-Regan: My friend. Thy ghost will haunt me to the grave. / What could have possessed me to hurt thee so?
 Eliza: Dost thou really want to know the answer? / Deeper still must we dive into the matter.
 # emdr
 -> DONE
 
-== after_fourth_flashback
-Regan: The witches were the first to see the truth. / They galled me into murder and I flew.
-Regan: Once this might have seemed the right thing to do, / But now I have an empire in uproar.
-Regan: I doubt I will survive beyond the year.
-Eliza: Just like the man thou killed to cometh here?
-Regan: I don't remember.
-Eliza: Soon, my lord, we will.
-# emdr
--> DONE
-
-== after_fifth_flashback
+== after_third_flashback
 Regan: What is this? Does thou seek to drive me mad?
 Eliza: Nay, my lord, thy downfall would lack sweetness. / Should thouh forget what ledst thee to this place.
 Eliza: Now come and lead thine army to its ruin. / Led by a man not yet of woman born.

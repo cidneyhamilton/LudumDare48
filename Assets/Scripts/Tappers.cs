@@ -23,29 +23,36 @@ namespace Cyborg.Clinic {
 	void OnEnable() {
 	    TapperEvents.OnStart += StartSequence;
 	    TapperEvents.OnEnd += EndSequence;
+	    StoryEvents.OnRestart += ResetDuration;
 	}
 
 	void OnDisable() {
 	    TapperEvents.OnStart -= StartSequence;
 	    TapperEvents.OnEnd -= EndSequence;
+	    StoryEvents.OnRestart -= ResetDuration;
 	}
 	
 	private Tapper LastTapped = Tapper.None;
 	private float timeRemaining = 10;
 	private bool timerIsRunning = false;
-	const float SEQUENCE_DURATION = 10;
+	const float START_DURATION = 5;
+	private float duration;
 	
 	public int numTaps = 0;
 	public int mistakes = 0;
 	
 	public void LeftTapper() {
-	    AudioEvents.PlaySound("tap1");
-	    Tap(Tapper.Left);
+	    if (timerIsRunning) {
+		AudioEvents.PlaySound("tap1");
+		Tap(Tapper.Left);
+	    }
 	}
 
 	public void RightTapper() {
-	    AudioEvents.PlaySound("tap2");
-	    Tap(Tapper.Right);
+	    if (timerIsRunning) {
+		AudioEvents.PlaySound("tap2");
+		Tap(Tapper.Right);
+	    }
 	}
 
 	public void Tap(Tapper tapper) {
@@ -64,6 +71,10 @@ namespace Cyborg.Clinic {
 	    LastTapped = Tapper.None;
 	}
 
+	void ResetDuration() {
+	    duration = START_DURATION;
+	}
+	
 	void StartSequence() {
 	    Debug.Log("starting tapper sequence.");
 	    Reset();
@@ -72,7 +83,7 @@ namespace Cyborg.Clinic {
 	    TapperMusic.FadeInMusic();
 	    // Start a countdown timer to end the sequence
 	    timerIsRunning = true;
-	    timeRemaining = SEQUENCE_DURATION;
+	    timeRemaining = duration;
 	}
 
 	void EndEarly() {
@@ -83,11 +94,13 @@ namespace Cyborg.Clinic {
 	
 	void EndSequence() {
 	    GetComponent<Canvas>().enabled = false;
-	    AudioEvents.FadeInMusic();
-	    TapperMusic.FadeOutMusic();
 	    Debug.Log("Sequence over.");	    
 
 	    if (IsSuccess()) {
+		duration += 3;
+		AudioEvents.PlayMusic("Main");	    
+		AudioEvents.FadeInMusic();
+		TapperMusic.FadeOutMusic();		
 		StoryEvents.ChoosePath("success");
 	    } else {
 		StoryEvents.ChoosePath("failure");
@@ -96,11 +109,12 @@ namespace Cyborg.Clinic {
 
 	// TODO: Scale the difficulty here
 	bool IsSuccess() {
-	    return numTaps > SEQUENCE_DURATION && mistakes == 0;
+	    return numTaps >= duration && mistakes == 0;
 	}	
 
 	void Start() {
 	    GetComponent<Canvas>().enabled = false;
+	    ResetDuration();
 	}
 
 	void Update() {
@@ -112,14 +126,16 @@ namespace Cyborg.Clinic {
 		    timerIsRunning = false;
 		    EndSequence();
 		}
+
+		if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.RightControl)) {
+		    LeftTapper();
+		}
+		if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftControl)) {
+		    RightTapper();
+		}
+		
 	    }
 
-	    if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.RightControl)) {
-		LeftTapper();
-	    }
-	    if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftControl)) {
-		RightTapper();
-	    }
 	    
 	}
 

@@ -26,9 +26,10 @@ namespace Cyborg.Audio {
 	}
 	
 	public void PlayMusic(string clipName) {
+	    audioSource.time = 0f;
 	    if (IsPlaying(clipName)) {
 		// Do Nothing; already playing this clip
-	    } else {
+	    } else {		
 		PlayClip(GetClipByName(clipName));
 	    }
 	}

@@ -15,7 +15,11 @@ namespace Cyborg.Dialogue {
 	
 	void Update() {
 	    // Update the timer for the debounce effect	    
-	    timer += Time.deltaTime;   	    
+	    timer += Time.deltaTime;
+	    
+	    if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.KeypadEnter)) {
+		Continue();
+	    }
 	}
 	
 	void OnEnable() {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cyborg.Audio;
 using Cyborg.Scenes;
 using Cyborg.Dialogue;
 
@@ -18,6 +19,7 @@ namespace Cyborg.Clinic {
 	}
 
 	void StartGame() {
+	    AudioEvents.PlayMusic("Main Dark");
 	    StoryEvents.Continue();
 	}
     }
