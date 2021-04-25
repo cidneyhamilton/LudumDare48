@@ -17,3 +17,4 @@ MonoBehaviour:
   GameOver: _Title
   UserInterface:
   - _Dialogue
+  - _Options

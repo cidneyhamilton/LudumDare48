@@ -15,6 +15,8 @@ namespace Cyborg.Dialogue {
 	public static event Action OnContinue;
 	public static event Action OnHide;
 
+	public static event Action OnShowSettings;
+	
 	// Show the Player Character's speech bubble
 	public static void Speak(string speaker, string speech, List<string> tags) {
 	    // UnityEngine.Debug.Log("Speaking line " + line);
@@ -47,6 +49,12 @@ namespace Cyborg.Dialogue {
 	public static void Hide() {
 	    if (OnHide != null) {
 		OnHide();
+	    }
+	}
+
+	public static void ShowSettings() {
+	    if (OnShowSettings != null) {
+		OnShowSettings();
 	    }
 	}
 

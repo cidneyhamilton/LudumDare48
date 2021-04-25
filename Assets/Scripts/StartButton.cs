@@ -16,10 +16,9 @@ namespace Cyborg.Clinic {
 	    SceneEvents.ChangeScene("Main");
 	}
 
-	void Update() {
-	    if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.KeypadEnter)) {
-		StartGame();
-	    }
+	public void Settings() {
+	    AudioEvents.PlaySound("click");
+	    StoryEvents.ShowSettings();
 	}
      
     }
