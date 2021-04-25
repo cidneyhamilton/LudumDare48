@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 
+using Cyborg.Audio;
 using Cyborg.Clinic;
 using Cyborg.Dialogue;
 using Cyborg.Scenes;
@@ -67,6 +68,7 @@ namespace GameController {
 	    // Debug.Log("Checking for game over.");
 	    if (IsGameOver()) {
 		// Debug.Log("Game Over.");
+		AudioEvents.PlaySound("EndingSting");
 		SceneEvents.ChangeScene("_Title");
 	    } else  if (canContinue) {
 		NextLine();

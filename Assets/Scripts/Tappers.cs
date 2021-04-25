@@ -98,11 +98,13 @@ namespace Cyborg.Clinic {
 
 	    if (IsSuccess()) {
 		duration += 3;
+		AudioEvents.PlaySound("HappySting");
 		AudioEvents.PlayMusic("Main");	    
 		AudioEvents.FadeInMusic();
 		TapperMusic.FadeOutMusic();		
 		StoryEvents.ChoosePath("success");
 	    } else {
+		AudioEvents.PlaySound("FailureSting");
 		StoryEvents.ChoosePath("failure");
 	    }
 	}
