@@ -9,14 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/_Start.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/_Title.unity
-    guid: 6a67e284382743740a41334e86a52993
-  - enabled: 1
     path: Assets/Scenes/_Dialogue.unity
     guid: dbc74459c3865cee083818a2cb0be9e6
   - enabled: 1
     path: Assets/Scenes/_Options.unity
     guid: e88fa03733ecbf544bae64ba2dc7a845
+  - enabled: 1
+    path: Assets/Scenes/_Sidebar.unity
+    guid: 5f9aa934709edb9b3bde473fb1db4fae
+  - enabled: 1
+    path: Assets/Scenes/_Tappers.unity
+    guid: c8695655435f90ea79ca7aa3b4885576
+  - enabled: 1
+    path: Assets/Scenes/_Title.unity
+    guid: 6a67e284382743740a41334e86a52993
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: c8ce4db292941a73aae8d0ee4aac29fc

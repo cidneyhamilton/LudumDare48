@@ -6,8 +6,7 @@ using Cyborg.Scenes;
 
 namespace Cyborg.Clinic {
     
-    public class StartButton : MonoBehaviour {
-
+    public class StartButton : View {
 	
 	public void StartGame() {
 	    AudioEvents.PlaySound("click");
@@ -19,6 +18,7 @@ namespace Cyborg.Clinic {
 	public void Settings() {
 	    AudioEvents.PlaySound("click");
 	    StoryEvents.ShowSettings();
+	    Time.timeScale = 0.0f;
 	}
      
     }

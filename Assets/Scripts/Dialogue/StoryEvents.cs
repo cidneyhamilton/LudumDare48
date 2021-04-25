@@ -16,6 +16,7 @@ namespace Cyborg.Dialogue {
 	public static event Action OnHide;
 
 	public static event Action OnShowSettings;
+	public static event Action OnHideSettings;
 	
 	// Show the Player Character's speech bubble
 	public static void Speak(string speaker, string speech, List<string> tags) {
@@ -55,6 +56,12 @@ namespace Cyborg.Dialogue {
 	public static void ShowSettings() {
 	    if (OnShowSettings != null) {
 		OnShowSettings();
+	    }
+	}
+
+	public static void HideSettings() {
+	    if (OnHideSettings != null) {
+		OnHideSettings();
 	    }
 	}
 

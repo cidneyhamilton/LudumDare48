@@ -18,3 +18,5 @@ MonoBehaviour:
   UserInterface:
   - _Dialogue
   - _Options
+  - _Tappers
+  - _Sidebar
