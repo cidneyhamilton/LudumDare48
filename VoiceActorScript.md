@@ -42,7 +42,7 @@ A psychotherapy patient, and the player character.
 
 ## After the first flashback
 
-**Eliza**: Well done, my lord. Thou hast accessed a glimpse, / Of what thy mind will do whence processed this. [Eliz011]
+**Eliza**: Well done, my lord. Thou hast accessed a glimpse, / Of what thy mind will do whence processed this. [Eliza011]
 
 **Regan**: I saw a woman's face-- [Regan005]
 
