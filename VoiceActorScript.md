@@ -80,7 +80,7 @@ A psychotherapy patient, and the player character.
 
 **Regan**: What is this? Does thou seek to drive me mad? [Regan013]
 
-**Eliza**: Nay, my lord, thy downfall would lack sweetness. / Should thouh forget what ledst thee to this place. [Eliza019]
+**Eliza**: Nay, my lord, thy downfall would lack sweetness. / Should thou forget what ledst thee to this place. [Eliza019]
 
 **Eliza**: Now come and lead thine army to its ruin. / Led by a man not yet of woman born. [Eliza020]
 
