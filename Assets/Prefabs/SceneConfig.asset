@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1e8fe30e0139a1799674dbf722b675, type: 3}
   m_Name: SceneConfig
   m_EditorClassIdentifier: 
-  Start: _Title
-  Title: _Title
-  GameOver: _Title
+  Start: _TitleMenu
+  Title: _TitleMenu
+  GameOver: _TitleMenu
   UserInterface:
   - _Dialogue
   - _Options

@@ -8,26 +8,31 @@ namespace Cyborg.Clinic {
     
     public class MenuButton : View {
 
-	void OnEnable() {
-	    StoryEvents.OnShowSettings += Hide;
-	    StoryEvents.OnHideSettings += Show;
-	}
+        void OnEnable() {
+            StoryEvents.OnShowSettings += Hide;
+            StoryEvents.OnHideSettings += Show;
+        }
 
-	void OnDisable() {
-	    StoryEvents.OnShowSettings -= Hide;	
-	    StoryEvents.OnHideSettings -= Show;
-	}
-	
-	public void Settings() {
-	    AudioEvents.PlaySound("click");
-	    StoryEvents.ShowSettings();
-	    Time.timeScale = 0.0f;
-	}
+        void OnDisable() {
+            StoryEvents.OnShowSettings -= Hide;
+            StoryEvents.OnHideSettings -= Show;
+        }
 
-	public void BackToTitle() {
-	    AudioEvents.PlaySound("click");
-	    SceneEvents.ChangeScene("_Title");
-	}
+        public void Settings() {
+            PlayClick();
+            StoryEvents.ShowSettings();
+            Time.timeScale = 0.0f;
+        }
+
+        public void BackToTitle() {
+            PlayClick();
+            SceneEvents.LoadTitleScene();
+        }
+
+        // Always play the same audio event
+        private void PlayClick() {
+            AudioEvents.PlaySound("click");
+        }
      
     }
 }
