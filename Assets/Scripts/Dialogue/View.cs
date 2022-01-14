@@ -9,33 +9,33 @@ namespace Cyborg.Dialogue {
     public class View : MonoBehaviour
     {
 	
-	protected bool isFading;
-	const float fadeDuration = 0.5f;
+								protected bool isFading;
+								const float fadeDuration = 0.5f;
 
-	void Start() {
-	    // Hide();
-	}
+								void Start() {
+												// Hide();
+								}
 	
-	public void Toggle(bool isShow) {
-	    if (isShow) {
-		Show();
-	    } else {
-		Hide();
-	    }
-	}
+								public void Toggle(bool isShow) {
+												if (isShow) {
+																Show();
+												} else {
+																Hide();
+												}
+								}
 	
-	public void TweenIn() {
-	    // Array.ForEach(GetComponentsInChildren<UIAnimation>(), element => element.TweenIn());
-	}
+								public void TweenIn() {
+												// Array.ForEach(GetComponentsInChildren<UIAnimation>(), element => element.TweenIn());
+								}
 	
-	public void TweenOut() {
-	    // Array.ForEach(GetComponentsInChildren<UIAnimation>(), element => element.TweenOut());
-	}
+								public void TweenOut() {
+												// Array.ForEach(GetComponentsInChildren<UIAnimation>(), element => element.TweenOut());
+								}
 	
         public virtual void Show() {
-	    if (GetComponent<Canvas>() != null) {
-		GetComponent<Canvas>().enabled = true;
-	    } else if (GetComponent<CanvasGroup>() != null) {
+												if (GetComponent<Canvas>() != null) {
+																GetComponent<Canvas>().enabled = true;
+												} else if (GetComponent<CanvasGroup>() != null) {
                 GetComponent<CanvasGroup>().alpha = 1f;
                 GetComponent<CanvasGroup>().interactable = true;
                 GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -46,9 +46,9 @@ namespace Cyborg.Dialogue {
         }
 
         public virtual void Hide() {
-	    if (GetComponent<Canvas>() != null) {
-		GetComponent<Canvas>().enabled = false;
-	    } else if (GetComponent<CanvasGroup>() != null) {
+												if (GetComponent<Canvas>() != null) {
+																GetComponent<Canvas>().enabled = false;
+												} else if (GetComponent<CanvasGroup>() != null) {
                 GetComponent<CanvasGroup>().alpha = 0f;
                 GetComponent<CanvasGroup>().interactable = false;
                 GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -58,36 +58,36 @@ namespace Cyborg.Dialogue {
             
         }
 	
-	public void FadeIn(Action callback = null) {			
-	    CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-	    canvasGroup.alpha = 0f;
-	    StartCoroutine(Fade(1f, callback));
-	}
+								public void FadeIn(Action callback = null) {			
+												CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
+												canvasGroup.alpha = 0f;
+												StartCoroutine(Fade(1f, callback));
+								}
 	
-	public void FadeOut(Action callback = null) {
-	    CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-	    canvasGroup.alpha = 1f;
-	    StartCoroutine(Fade(0f, callback));
-	}
+								public void FadeOut(Action callback = null) {
+												CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
+												canvasGroup.alpha = 1f;
+												StartCoroutine(Fade(0f, callback));
+								}
 	
-	IEnumerator Fade(float finalAlpha, Action callback = null) {
-	    CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-	    isFading = true;
+								IEnumerator Fade(float finalAlpha, Action callback = null) {
+												CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
+												isFading = true;
 			
-	    float fadeSpeed = Mathf.Abs(canvasGroup.alpha - finalAlpha) / fadeDuration;
+												float fadeSpeed = Mathf.Abs(canvasGroup.alpha - finalAlpha) / fadeDuration;
 	    
-	    while (!Mathf.Approximately(canvasGroup.alpha, finalAlpha)) {
-		canvasGroup.alpha = Mathf.MoveTowards(canvasGroup.alpha, finalAlpha, fadeSpeed * Time.deltaTime);
-		yield return null;
-	    }
+												while (!Mathf.Approximately(canvasGroup.alpha, finalAlpha)) {
+																canvasGroup.alpha = Mathf.MoveTowards(canvasGroup.alpha, finalAlpha, fadeSpeed * Time.deltaTime);
+																yield return null;
+												}
 			
-	    isFading = false;
+												isFading = false;
 			
-	    if (callback != null) {
-		callback();
-	    }
+												if (callback != null) {
+																callback();
+												}
 	    
-	}
+								}
 	       	
     }
 

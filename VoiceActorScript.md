@@ -20,7 +20,7 @@ A psychotherapy patient, and the player character.
 
 **Eliza**: Can drive the demons from within thy mind, / And bring thee to a state of better health. [Eliza005]
 
-**Regan**: Speak plainly, woman. What wilt thou of me? [Regan001]
+**Regan**: Speak plainly, doctor. What wilt thou of me? [Regan001]
 
 **Eliza**: Sit, sit, lord. And speak of thy memories. [Eliza006]
 
@@ -64,6 +64,8 @@ A psychotherapy patient, and the player character.
 
 ## After the Second Flashback
 
+Here, Regan sounds sharper and more desperate. The therapist's voice remains steady..
+
 **Regan**: The witches were the first to see the truth. / They galled me into murder and I flew. [Regan009]
 
 **Regan**: Once this might have seemed the right thing to do, / But now I have an empire in uproar. [Regan010]
@@ -77,6 +79,8 @@ A psychotherapy patient, and the player character.
 **Eliza**: Dost thou really want to know the answer? / Deeper still must we dive into the matter. [Eliza018]
 
 ## After the Third Flashback
+
+At this point, Regan should be wild and unhinged. He's falling apart and losing control.
 
 **Regan**: What is this? Does thou seek to drive me mad? [Regan013]
 

@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-
 using Cyborg.Audio;
 using Cyborg.Dialogue;
 using Cyborg.Scenes;
 
 namespace Cyborg.Clinic {
-    
+
+				// A button that opens the title or settings screen
     public class MenuButton : View {
 
         void OnEnable() {

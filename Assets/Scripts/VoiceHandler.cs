@@ -12,25 +12,33 @@ namespace Cyborg.Clinic {
 								
 								void OnEnable() {
 												StoryEvents.OnSpeak += PlayVoiceClip;
+												StoryEvents.OnShowSettings += Silent;
 								}
 
 								void OnDisable() {
 												StoryEvents.OnSpeak -= PlayVoiceClip;
+												StoryEvents.OnShowSettings += Silent;
 								}
 
 								void Start() {
 												source = GetComponent<AudioSource>();
+								}
+
+								void Silent() {
+												// Silences the voice acting
+												source.clip = null;
 								}
 								
 								void PlayVoiceClip(string speaker, string speech, List<string> tags) {
 												for (int i = 0; i < tags.Count; i++) {
 																string tag = tags[i];
 																if (tag.Contains(".ogg")) {
-																				Debug.Log(tag);
+																				// Debug.Log(tag);
 																				string clipName = tag.Split('.')[0];
-																				Debug.Log(clipName);
+																				// Debug.Log(clipName);
 																				AudioClip clip = Resources.Load<AudioClip>("VoiceClips/" + clipName);
-																				source.PlayOneShot(clip);
+																				source.clip = clip;
+																				source.Play();
 																}
 																
 												}
