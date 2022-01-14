@@ -7,20 +7,22 @@ namespace Cyborg.Clinic {
     public static class TapperEvents 
     {
 
-	public static event Action OnStart;
-	public static event Action OnEnd;
+								// Handles starting the tapper sequence
+								public static event Action OnStart;
 
-	public static void StartSequence() {
-	    Debug.Log("Starting tapper sequence.");
-	    if (OnStart != null) {
-		OnStart();
-	    }
-	}
+								// Handles ending the tapper sequence
+								public static event Action OnEnd;
 
-	public static void EndSequence() {
-	    if (OnEnd != null) {
-		OnEnd();
-	    }
-	}
+								public static void StartSequence() {
+												if (OnStart != null) {
+																OnStart();
+												}
+								}
+
+								public static void EndSequence() {
+												if (OnEnd != null) {
+																OnEnd();
+												}
+								}
     }
 }

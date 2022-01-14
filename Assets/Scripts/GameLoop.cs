@@ -6,22 +6,23 @@ using Cyborg.Scenes;
 using Cyborg.Dialogue;
 
 namespace Cyborg.Clinic {
-    
+
+				// Manages the main game loop
     public class GameLoop : MonoBehaviour
     {
 
-	void OnEnable() {
-	    SceneController.AfterSceneLoad += StartGame;
-	}
+								void OnEnable() {
+												SceneController.AfterSceneLoad += StartGame;
+								}
 
-	void OnDisable() {
-	    SceneController.AfterSceneLoad -= StartGame;
-	}
+								void OnDisable() {
+												SceneController.AfterSceneLoad -= StartGame;
+								}
 
-	void StartGame() {
-	    AudioEvents.PlayMusic("Main Dark");
-	    StoryEvents.Continue();
-	}
+								void StartGame() {
+												AudioEvents.PlayMusic("Main Dark");
+												StoryEvents.Continue();
+								}
     }
 
 }
