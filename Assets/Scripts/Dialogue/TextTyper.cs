@@ -34,16 +34,16 @@ namespace Cyborg.Dialogue {
         void Awake() {
             textComponent = GetComponent<Text>();
             font = textComponent.font;
-	}
+								}
 
         public void UpdateText(string newText) {
             // Debug.Log(string.Format("Updating text to {0}", newText));
-	    StopTyping();
-	    textComponent.text = "";
-	    textToType = newText;
-	    lettersToType = Regex.Split(textToType, string.Empty);
-	    words = textToType.Split(' ');
-	    StartTyping();    
+												StopTyping();
+												textComponent.text = "";
+												textToType = newText;
+												lettersToType = Regex.Split(textToType, string.Empty);
+												words = textToType.Split(' ');
+												StartTyping();    
         }
 
         public void Continue() {
@@ -59,7 +59,7 @@ namespace Cyborg.Dialogue {
             if (typing) {
                 // Already typing; do nothing!
             } else {
-	      InvokeRepeating("Type", startDelay, 0.04f);
+																InvokeRepeating("Type", startDelay, 0.04f);
             }
         }
 				
@@ -71,10 +71,10 @@ namespace Cyborg.Dialogue {
             CancelInvoke("Type");
         }
 
-	float GetContainerWidth() {
-	    // Debug.Log("Container width: " + GetComponent<RectTransform>().sizeDelta.x);
-	    return Mathf.Max(300f, GetComponent<RectTransform>().sizeDelta.x * 1f - 20f);     
-	}
+								float GetContainerWidth() {
+												// Debug.Log("Container width: " + GetComponent<RectTransform>().sizeDelta.x);
+												return Mathf.Max(300f, GetComponent<RectTransform>().sizeDelta.x * 1f - 20f);     
+								}
 	
 	
         // Returns a normalised percentage (0-1) of how much space a character takes on a line of text
@@ -83,13 +83,13 @@ namespace Cyborg.Dialogue {
             // TODO We should create a proper lookup table for each letter, rather than referencing at runtime
 
             CharacterInfo ch;
-	    font.RequestCharactersInTexture(c.ToString(), textComponent.fontSize); 
-	    font.GetCharacterInfo(c, out ch);
+												font.RequestCharactersInTexture(c.ToString(), textComponent.fontSize); 
+												font.GetCharacterInfo(c, out ch);
 	    
-	    //Debug.Log(string.Format("Width of character {0}: {1}", c, ch.glyphWidth));
+												//Debug.Log(string.Format("Width of character {0}: {1}", c, ch.glyphWidth));
 			
-	    //Debug.Log("Width of container: " + GetContainerWidth());
-	    return ch.glyphWidth / GetContainerWidth();;
+												//Debug.Log("Width of container: " + GetContainerWidth());
+												return ch.glyphWidth / GetContainerWidth();;
         }
 		
         void Type() {
@@ -123,33 +123,33 @@ namespace Cyborg.Dialogue {
 
                 // TODO: Handle Rich Text Tags a bit more elegantly
                 if (nextLetter == "<") {		    
-		    Debug.Log("Encountered rich text tag; show the whole word.");
+																				Debug.Log("Encountered rich text tag; show the whole word.");
 
-		    // Next letter
-		    counter++;
-		    nextLetter += lettersToType[counter];
+																				// Next letter
+																				counter++;
+																				nextLetter += lettersToType[counter];
 		    
-		    // Go to the next tag
-		    while (lettersToType[counter] != "<") {
-			counter++;
-			nextLetter += lettersToType[counter];
-		    }
+																				// Go to the next tag
+																				while (lettersToType[counter] != "<") {
+																								counter++;
+																								nextLetter += lettersToType[counter];
+																				}
 
-		    // Next Letter
-		    counter++;
-		    nextLetter += lettersToType[counter];
+																				// Next Letter
+																				counter++;
+																				nextLetter += lettersToType[counter];
 
 		    
-		    // Go to the end of the next tag
-		    while (lettersToType[counter] != ">") {
-			counter++;
-			nextLetter += lettersToType[counter];
-		    }
+																				// Go to the end of the next tag
+																				while (lettersToType[counter] != ">") {
+																								counter++;
+																								nextLetter += lettersToType[counter];
+																				}
                 }
 
-		// Add to text component
+																// Add to text component
                 textComponent.text = textComponent.text + nextLetter; 
-		counter++;    
+																counter++;    
             }
             
         }

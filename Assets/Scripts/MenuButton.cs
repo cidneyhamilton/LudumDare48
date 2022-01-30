@@ -29,6 +29,13 @@ namespace Cyborg.Clinic {
             SceneEvents.LoadTitleScene();
         }
 
+								public void Restart() {
+												PlayClick();
+												StoryEvents.Hide();
+												StoryEvents.Restart();
+												SceneEvents.LoadMainScene();
+								}
+
         // Always play the same audio event
         private void PlayClick() {
             AudioEvents.PlaySound("click");

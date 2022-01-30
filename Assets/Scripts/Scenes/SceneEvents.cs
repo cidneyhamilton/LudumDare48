@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 namespace Cyborg.Scenes {
 
@@ -11,6 +12,8 @@ namespace Cyborg.Scenes {
         public delegate void ChangeSceneHandler(string sceneName);
         public static event ChangeSceneHandler OnChangeScene;
 
+								public static event Action AfterLoadTitleScene;
+
         public static void ChangeScene(string sceneName) {
             if (OnChangeScene != null) {
                 OnChangeScene(sceneName);
@@ -19,10 +22,15 @@ namespace Cyborg.Scenes {
 
         public static void LoadTitleScene() {
             ChangeScene(TITLE);
+													if (AfterLoadTitleScene != null) {
+																AfterLoadTitleScene();
+													}
         }
 
         public static void LoadMainScene() {
+												Debug.Log("Load main scene.");
             ChangeScene(MAIN);
+											
         }
     }
 }

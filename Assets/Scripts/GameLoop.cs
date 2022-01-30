@@ -13,15 +13,22 @@ namespace Cyborg.Clinic {
 
 								void OnEnable() {
 												SceneController.AfterSceneLoad += StartGame;
+												SceneEvents.AfterLoadTitleScene += LoadTitle;
 								}
 
 								void OnDisable() {
 												SceneController.AfterSceneLoad -= StartGame;
+												SceneEvents.AfterLoadTitleScene -= LoadTitle;
 								}
 
 								void StartGame() {
 												AudioEvents.PlayMusic("Main Dark");
 												StoryEvents.Continue();
+								}
+
+								void LoadTitle() {
+												Debug.Log("Load title scene.");
+												AudioEvents.PlayMusic("Main");												
 								}
     }
 
