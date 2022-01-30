@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 102700374}
+  scaleFactor: 1
   volumeMixer: {fileID: 24100000, guid: 9bed33fc93df51c228bcfa39e8cfbc38, type: 2}
 --- !u!1 &278035152
 GameObject:
@@ -804,6 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 533011225}
+  scaleFactor: 10
   volumeMixer: {fileID: 24100000, guid: 078186559eb06bef09d30373704379f9, type: 2}
 --- !u!114 &533011225
 MonoBehaviour:
@@ -1864,6 +1866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1380099120}
+  scaleFactor: 10
   volumeMixer: {fileID: 24100000, guid: 0b657966100da7e5d98afdc186ba2d4d, type: 2}
 --- !u!1 &1384940295
 GameObject:

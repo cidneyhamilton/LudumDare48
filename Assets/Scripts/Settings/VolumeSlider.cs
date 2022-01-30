@@ -10,25 +10,24 @@ namespace Cyborg.Clinic {
     public class VolumeSlider : Slider
     {
 
-        const float SCALE_FACTOR = 10f;
+        float scaleFactor = 20f;
         public AudioMixer volumeMixer;
-	const string VOLUME = "volume";
-	float mixerVolume;
+	    const string VOLUME = "volume";
+	    float mixerVolume;
 	
         void Start()
         {
-	    
-	    volumeMixer.GetFloat(VOLUME, out mixerVolume);
+	        volumeMixer.GetFloat(VOLUME, out mixerVolume);
             slider.value = VolumeToSliderValue(mixerVolume);
         }
 
-	private float VolumeToSliderValue(float volume) {
-	    return Mathf.Pow(10, volume/20);
-	}
+        private float VolumeToSliderValue(float volume) {
+            return Mathf.Pow(10, volume/scaleFactor);
+        }
 
-	private float SliderValueToVolume(float value) {
-	    return Mathf.Log10(value) * 20;
-	}
+        private float SliderValueToVolume(float value) {
+            return Mathf.Log10(value) * scaleFactor;
+        }
 	
         public void UpdateSlider() {
             if (slider != null) {
@@ -47,7 +46,7 @@ namespace Cyborg.Clinic {
             base.Down();
             UpdateSlider();
 
-	    AudioEvents.PlaySound("click");            
+	        AudioEvents.PlaySound("click");            
         }
     }
 
