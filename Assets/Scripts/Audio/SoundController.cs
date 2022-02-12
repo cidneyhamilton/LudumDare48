@@ -37,6 +37,14 @@ namespace Cyborg.Audio {
 		
 								// Get the audio clip from the array of clips by name
 								protected AudioClip GetClipByName(string clipName) {
+												if (clips == null || clips.Length == 0) {
+																// Error handling if no clips assigned
+																Debug.Log("No clips assigned; throw exception.");
+																return null;
+												}
+
+
+												Debug.Log("Clips: " + clips);
 												return Array.Find(clips, element => element.name.ToLower() == clipName.ToLower());
 								}
 		
